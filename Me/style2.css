@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #7e4cdb, #3686be, #7d16b9);
+    color: #fefdff;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(90deg, #fff7fb, #f4f1ff, #eff8ff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(241, 239, 243, 0.12);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #7c6ee6;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #514b68;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8b7cf6;
+}
+
+.hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 28px;
+    background: linear-gradient(135deg, #fff4fa, #f1edff);
+    color: #7665dc;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(80, 65, 130, 0.25);
+}
+
+.booking-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.booking-section h2,
+.slideshow-section h2,
+.destinations h2,
+.benefits h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.subtitle {
+    color: #000000;
+    margin-bottom: 35px;
+}
+
+.booking-box {
+    max-width: 1050px;
+    margin: auto;
+    background: linear-gradient(135deg, #fffaff, #f5f2ff, #f0f9ff);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(111, 91, 145, 0.12);
+    text-align: left;
+}
+
+.trip-type {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.trip-type label {
+    cursor: pointer;
+    font-weight: bold;
+    color: #000000;
+}
+
+.trip-type input {
+    margin-right: 6px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border: 1px solid #d8d0e8;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background: linear-gradient(135deg, #fffaff, #f7f5ff);
+    color: #000000;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #9b8cf5;
+}
+
+#searchButton {
+    display: block;
+    width: 220px;
+    margin: 30px auto 0;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #8c7cf0, #6bbce8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background: linear-gradient(135deg, #7565dc, #55a9d9);
+}
+
+#message {
+    display: none;
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.success {
+    display: block !important;
+    background: linear-gradient(135deg, #e2f8ed, #e2f4ff);
+    color: #39705a;
+}
+
+.error {
+    display: block !important;
+    background: linear-gradient(135deg, #ffe8ed, #f4eaff);
+    color: #8a4b63;
+}
+
+.slideshow-section {
+    padding: 80px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #eeeaff, #e5f5ff, #fff0f6);
+}
+
+.slideshow-box {
+    max-width: 1000px;
+    margin: auto;
+    background: linear-gradient(135deg, #fffaff, #f4f1ff, #eff9ff);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(111, 91, 145, 0.12);
+}
+
+.slideshow-display {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #63558e, #536f91, #865d78);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow-display img,
+.slideshow-display video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.empty-slideshow {
+    color: white;
+    text-align: center;
+}
+
+.empty-slideshow span {
+    font-size: 70px;
+}
+
+.empty-slideshow h3 {
+    margin: 15px 0 8px;
+    font-size: 24px;
+}
+
+.empty-slideshow p {
+    color: #e5def2;
+}
+
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.slideshow-controls button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #8c7cf0, #6bbce8);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.slideshow-controls button:hover {
+    background: linear-gradient(135deg, #7565dc, #55a9d9);
+}
+
+.slideshow-controls #clearButton {
+    background: linear-gradient(135deg, #ee8fa9, #d982b8);
+}
+
+.slideshow-controls #clearButton:hover {
+    background: linear-gradient(135deg, #db7692, #c66fa4);
+}
+
+.upload-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #8c7cf0, #6bbce8);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-button:hover {
+    background: linear-gradient(135deg, #7565dc, #55a9d9);
+    transform: translateY(-2px);
+}
+
+#mediaInput {
+    display: none;
+}
+
+.slide-counter {
+    margin-top: 15px;
+    color: #837b9b;
+    font-weight: bold;
+}
+
+.destinations {
+    background: linear-gradient(135deg, #fffaff, #f4f1ff, #eff9ff);
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.destinations > p {
+    color: #837b9b;
+    margin-bottom: 40px;
+}
+
+.destination-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.destination-card {
+    background: linear-gradient(135deg, #fffaff, #f4f1ff);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(111, 91, 145, 0.12);
+    transition: 0.3s;
+    text-align: left;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+}
+
+.destination-image {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bali {
+    background: linear-gradient(135deg, #79d8dc, #8cb8ef, #b89bea);
+}
+
+.singapore {
+    background: linear-gradient(135deg, #f5a5b9, #d9a4e8, #9ca9f4);
+}
+
+.tokyo {
+    background: linear-gradient(135deg, #a895eb, #d49ee7, #f0a7c9);
+}
+
+.destination-info {
+    padding: 24px;
+}
+
+.destination-info h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: #514b68;
+}
+
+.destination-info p {
+    color: #837b9b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.destination-info strong {
+    color: #7665dc;
+}
+
+.benefits {
+    padding: 80px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f4ff, #eef8ff, #fff4f8);
+}
+
+.benefit-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: 45px auto 0;
+}
+
+.benefit {
+    background: linear-gradient(135deg, #fffaff, #f4f1ff, #eff9ff);
+    padding: 35px 22px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(111, 91, 145, 0.1);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.benefit h3 {
+    margin-bottom: 12px;
+    color: #514b68;
+}
+
+.benefit p {
+    color: #837b9b;
+    line-height: 1.6;
+}
+
+footer {
+    background: linear-gradient(135deg, #e7e7e7, #a18a07, #89c7eb); 
+    color: white;
+    padding: 50px 8% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #d6cfe3;
+}
+
+@media (max-width: 1000px) {
+    .hero {
+        min-height: 600px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destination-container {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-box {
+        padding: 25px;
+    }
+
+    .benefit-container {
+        grid-template-columns: 1fr;
+    }
+
+    .slideshow-display {
+        height: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Ticket Background & Watermark Styles */
+.ticket-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 2px dashed #8c7cf0;
+    overflow: hidden;
+}
+
+.ticket-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ticket-content {
+    position: relative;
+    z-index: 2;
+}
